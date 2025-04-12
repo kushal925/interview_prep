@@ -72,3 +72,121 @@ arr1 = [1, 2, 2, 4, 5]
 arr2 = [5, 3, 2, 1]
 print("Is arr1 sorted?", is_sorted(arr1))  # True
 print("Is arr2 sorted?", is_sorted(arr2))  # False
+
+OOPS CONCEPTS
+
+Class
+A class is like a blueprint for creating objects. It defines properties (variables) and methods (functions).
+
+python
+Copy
+Edit
+class Car:
+    def __init__(self, brand, speed):
+        self.brand = brand
+        self.speed = speed
+
+    def drive(self):
+        print(f"{self.brand} is driving at {self.speed} km/h")
+
+
+2. Object
+An object is an instance of a class.
+
+python
+Copy
+Edit
+car1 = Car("BMW", 120)
+car1.drive()  # Output: BMW is driving at 120 km/h
+
+
+3. Inheritance
+Allows a class (child) to inherit properties and methods from another class (parent).
+
+python
+Copy
+Edit
+class ElectricCar(Car):  # Inheriting from Car
+    def charge(self):
+        print("Charging...")
+
+ecar = ElectricCar("Tesla", 150)
+ecar.drive()
+ecar.charge()
+
+
+4. Polymorphism
+Means same function name but different behavior depending on the object.
+
+python
+Copy
+Edit
+class Dog:
+    def sound(self):
+        print("Bark")
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+# Polymorphism in action
+for animal in [Dog(), Cat()]:
+    animal.sound()
+
+
+5. Encapsulation
+Hides the internal data of an object and only exposes what is necessary. We use getters and setters to access private data.
+
+python
+Copy
+Edit
+class Person:
+    def __init__(self, age):
+        self.__age = age  # Private variable
+
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, new_age):
+        if new_age > 0:
+            self.__age = new_age
+
+p = Person(25)
+print(p.get_age())
+p.set_age(30)
+print(p.get_age())
+
+
+6. Abstraction
+Hides complex implementation and only shows the essential details.
+
+python
+Copy
+Edit
+from abc import ABC, abstractmethod
+
+class Shape(ABC):  # Abstract Base Class
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def area(self):
+        print("Area = πr²")
+
+c = Circle()
+c.area()
+Let me know if you want this in Java too, or need a short note format for your GitHub!
+
+
+
+
+
+
+
+
+
+
+
+
+
