@@ -1,0 +1,74 @@
+. Find Maximum and Minimum in an Array
+Problem:
+Given an array of n integers, find the maximum and minimum elements.
+
+Example:
+Input: [2, 5, 1, 7, 3]
+Output: Max = 7, Min = 1
+
+✅ Try solving it using a simple loop (no built-in functions).
+
+def find_max_min(arr):
+    max_val = arr[0]
+    min_val = arr[0]
+    
+    for num in arr:
+        if num > max_val:
+            max_val = num
+        if num < min_val:
+            min_val = num
+            
+    return max_val, min_val
+
+# Example
+arr = [2, 5, 1, 7, 3]
+max_val, min_val = find_max_min(arr)
+print("Max =", max_val)
+print("Min =", min_val)
+
+Reverse the Array
+Problem:
+Reverse the given array in-place (without using another array).
+
+Example:
+Input: [1, 2, 3, 4, 5]
+Output: [5, 4, 3, 2, 1]
+
+💡 Use two-pointer approach: start and end pointers swapping elements.
+
+def reverse_array(arr):
+    start = 0
+    end = len(arr) - 1
+    
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]
+        start += 1
+        end -= 1
+    
+    return arr
+
+# Example
+arr = [1, 2, 3, 4, 5]
+print("Reversed Array:", reverse_array(arr))
+
+. Check if Array is Sorted
+Problem:
+Check whether the given array is sorted in non-decreasing order.
+
+Example:
+Input: [1, 2, 2, 4, 5] → Output: Yes
+Input: [5, 3, 2, 1] → Output: No
+
+👀 Loop through and compare each a[i] with a[i+1]
+
+def is_sorted(arr):
+    for i in range(len(arr) - 1):
+        if arr[i] > arr[i + 1]:
+            return False
+    return True
+
+# Example
+arr1 = [1, 2, 2, 4, 5]
+arr2 = [5, 3, 2, 1]
+print("Is arr1 sorted?", is_sorted(arr1))  # True
+print("Is arr2 sorted?", is_sorted(arr2))  # False
